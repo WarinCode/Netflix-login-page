@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@200&display=swap");
+
+* {
+    font-family: "Mukta", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    /* Ref : https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/linear-gradient */
+    background-image: linear-gradient(rgba(10, 10, 10, 0.808), rgba(10, 10, 10, 0.5), 100%, rgba(122, 121, 121, 0)),
+        url("../assets/bg.jpg");
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    background: transparent;
+    padding: 20px;
+    & img {
+        height: 75px;
+        width: 190px;
+        margin: 15px 0 0 5px;
+        filter: contrast(150%);
+        pointer-events: none;
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: max-content;
+    width: 440px;
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+    margin: 10px auto;
+    padding: 60px;
+    border-radius: 3px;
+    & h1 {
+        text-align: start;
+        text-transform: capitalize;
+        font-size: 35px;
+        font-weight: bolder;
+        margin-bottom: 8px;
+        letter-spacing: 1px;
+    }
+
+    & .input-group {
+        width: 100%;
+        & input {
+            all: unset;
+            box-sizing: border-box;
+            text-align: start;
+            padding: 10px 19px;
+            width: 100%;
+            margin-block: 10px 5px;
+            height: 45px;
+            background-color: #333;
+            border-radius: 4px;
+            font-size: 19px;
+        }
+
+        & input::placeholder {
+            font-size: 17px;
+            font-weight: bold;
+        }
+    }
+
+    & button[type="submit"] {
+        all: unset;
+        width: 100%;
+        height: 50px;
+        font-size: 16px;
+        font-weight: bolder;
+        text-transform: capitalize;
+        text-align: center;
+        border-radius: 5px;
+        background-color: rgb(229, 9, 20);
+        color: white;
+        margin-block: 35px 7px;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: all 0.1s ease;
+    }
+
+    & button[type="submit"]:hover {
+        filter: brightness(93%);
+    }
+
+    & .option {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 5px;
+        & span {
+            display: inherit;
+            align-items: center;
+            justify-content: center;
+            color: rgb(179, 179, 179);
+            & input[type="checkbox"] {
+                accent-color: rgb(126, 126, 126);
+                width: 17px;
+                height: 17px;
+                margin-inline-end: 5px;
+            }
+
+            & label {
+                font-size: 15px;
+            }
+        }
+        & a:visited,
+        a:link {
+            font-size: 15px;
+            color: rgb(179, 179, 179);
+            text-decoration: none;
+        }
+        & a:hover {
+            text-decoration: underline;
+        }
+    }
+
+    & .bottom {
+        height: 90px;
+        margin-block: 60px;
+        text-align: start;
+        font-size: 16px;
+        color: rgb(179, 179, 179);
+
+        & p::after {
+            content: "Sign up now.";
+            color: white;
+            font-weight: lighter;
+        }
+
+        & p:hover::after {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        & p + p {
+            margin-top: 11px;
+            font-size: 13.5px;
+        }
+
+        & p + p::after {
+            content: "Learn more.";
+            color: rgb(0, 113, 235);
+        }
+    }
+}
